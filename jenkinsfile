@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git clone') {
+            steps {
+                git branch: 'main', credentialsId: 'nagasai', url: 'https://github.com/KNSK9/jenkinsdemo13.git'
+            }
+			}
+		stage('shell'){
+            steps{
+			   sh 'ls -l'
+			}
+		    }	
+        }
+    }
